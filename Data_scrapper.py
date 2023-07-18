@@ -34,12 +34,6 @@ for i in top10:
   top10List.append(i)
 
 #tickerName = input("Enter the stock ticker ")
-tsla = yf.Ticker("TSLA")
-
-
-pd.set_option('display.max_rows', None)
-print("Todays PEG ratio " + str(tsla.info['pegRatio'])) # PEG RATIO price/earnings-to-growth
-print("Todays PB ratio " + str(tsla.info['currentPrice']/tsla.info['bookValue'])) # PB RATIO Price-to-Book
 
 
 print(top10List)
