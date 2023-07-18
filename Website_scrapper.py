@@ -12,11 +12,11 @@ Hashed = hash(WebData)
 
 while True:
     try:
-        time.sleep(15)
+        time.sleep(20)
         r = requests.get('https://www.capitoltrades.com/trades?assetType=stock')
         WebData = BeautifulSoup(r.text, features="lxml")
 
-        if(Hashed == hash(WebData)):
+        if(Hashed != hash(WebData)):
             print("page updated")
             Hashed = hash(WebData)
             soup = BeautifulSoup(r.text ,features="lxml")
