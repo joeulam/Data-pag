@@ -38,8 +38,9 @@ while True:
                 for i, infos in enumerate(info):
                     dict_to_add[columns[i]] = infos.text
                 stocks_df = pd.concat([stocks_df,pd.DataFrame(dict_to_add,index=[0])],ignore_index=True)
-            stocks_df = stocks_df[stocks_df['Published'] == "Today"]
-            print(stocks_df)
+            
+            stocks_df[stocks_df['Published'].filter(like='Today')]
+            print(stocks_df.head())
 
 
 
